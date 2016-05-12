@@ -28,4 +28,8 @@ node {
 stage 'Run Selenium Tests'
 
 
+sh "se-interpreter ticketmonster-selenium-1.json --driver-host=ondemand.saucelabs.com --driver-port=80 --browser-username=jimleitch --browser-accessKey=$SAUCEPASS"
+
+
+
 echo 'goodbye from Pipeline'
