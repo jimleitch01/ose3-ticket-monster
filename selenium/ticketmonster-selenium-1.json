@@ -1,0 +1,141 @@
+{
+  "type": "script",
+  "seleniumVersion": "2",
+  "formatVersion": 2,
+  "steps": [
+    {
+      "type": "get",
+      "url": "http://localhost:8080/ticket-monster/"
+    },
+    {
+      "type": "clickElement",
+      "locator": {
+        "type": "link text",
+        "value": "Buy tickets now"
+      }
+    },
+    {
+      "type": "clickElement",
+      "locator": {
+        "type": "link text",
+        "value": "Concert"
+      }
+    },
+    {
+      "type": "clickElement",
+      "locator": {
+        "type": "link text",
+        "value": "Rock concert of the decade"
+      }
+    },
+    {
+      "type": "setElementSelected",
+      "locator": {
+        "type": "xpath",
+        "value": "//select[@id='venueSelector']//option[3]"
+      }
+    },
+    {
+      "type": "verifyTextPresent",
+      "text": "Get ready to rock your night away with this megaconcert extravaganza from 10 of the biggest rock stars of the 80's"
+    },
+    {
+      "type": "verifyTextPresent",
+      "text": "The Sydney Opera House is a multi-venue performing arts centre in Sydney, New South Wales, Australia"
+    },
+    {
+      "type": "clickElement",
+      "locator": {
+        "type": "name",
+        "value": "bookButton"
+      }
+    },
+    {
+      "type": "setElementSelected",
+      "locator": {
+        "type": "xpath",
+        "value": "//select[@id='sectionSelect']//option[4]"
+      }
+    },
+    {
+      "type": "setElementText",
+      "locator": {
+        "type": "name",
+        "value": "tickets-1"
+      },
+      "text": "1"
+    },
+    {
+      "type": "setElementText",
+      "locator": {
+        "type": "name",
+        "value": "tickets-2"
+      },
+      "text": "2"
+    },
+    {
+      "type": "clickElement",
+      "locator": {
+        "type": "name",
+        "value": "add"
+      }
+    },
+    {
+      "type": "verifyTextPresent",
+      "text": "$167.75"
+    },
+    {
+      "type": "verifyTextPresent",
+      "text": "$157.5"
+    },
+    {
+      "type": "verifyTextPresent",
+      "text": "Total price: $482.75"
+    },
+    {
+      "type": "setElementText",
+      "locator": {
+        "type": "id",
+        "value": "email"
+      },
+      "text": "jim@jim.com"
+    },
+    {
+      "type": "clickElement",
+      "locator": {
+        "type": "name",
+        "value": "submit"
+      }
+    },
+    {
+      "type": "verifyTextPresent",
+      "text": "Booking #1 confirmed!"
+    },
+    {
+      "type": "verifyTextPresent",
+      "text": "Email: jim@jim.com"
+    },
+    {
+      "type": "verifyTextPresent",
+      "text": "Event: Rock concert of the decade"
+    },
+    {
+      "type": "verifyTextPresent",
+      "text": "Venue: Sydney Opera House"
+    },
+    {
+      "type": "verifyTextPresent",
+      "text": "Date: Wed 23 September 2015 at 21:30"
+    },
+    {
+      "type": "verifyTextPresent",
+      "text": "Created on: Thu 12 May 2016 at 06:42"
+    }
+  ],
+  "data": {
+    "configs": {},
+    "source": "none"
+  },
+  "inputs": [],
+  "timeoutSeconds": 60
+}
