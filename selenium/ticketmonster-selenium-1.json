@@ -5,7 +5,7 @@
   "steps": [
     {
       "type": "get",
-      "url": "http://localhost:8080/ticket-monster/"
+      "url": "http://10.10.11.119:8080/ticket-monster/"
     },
     {
       "type": "clickElement",
