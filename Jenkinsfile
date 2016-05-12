@@ -28,7 +28,7 @@ node {
 stage 'Run Selenium Tests'
 
 node {
-  sh "se-interpreter selenium/ticketmonster-selenium-1.json --driver-host=ondemand.saucelabs.com --driver-port=80 --browser-username=jimleitch --browser-accessKey=${env.SAUCEPASS}"
+  sh "se-interpreter selenium/ticketmonster-selenium-1.json --driver-host=ondemand.saucelabs.com --driver-port=80 --browser-username=jimleitch --browser-accessKey=$SAUCEPASS"
 }
 
 
