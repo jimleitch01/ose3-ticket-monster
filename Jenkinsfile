@@ -28,7 +28,7 @@ node {
 stage 'Run Selenium Tests'
 echo 'JOBNAME IS ${env.JOB_NAME}'
 node {
-  sh "se-interpreter selenium/ticketmonster-selenium-1.json --driver-host=ondemand.saucelabs.com --driver-port=80 --browser-username=jimleitch --browser-accessKey=${env.SAUCEPASS}"
+  sh "/tmp/run-selenium"
 }
 
 
