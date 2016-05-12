@@ -28,7 +28,7 @@ node {
 stage 'Run Selenium Tests'
 echo 'JOBNAME IS ${env.JOB_NAME}'
 node {
-  sh "/tmp/run-selenium"
+  sh "/tmp/runselenium"
 }
 
 
