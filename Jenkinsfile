@@ -20,7 +20,7 @@ node {
 
 stage 'Coverage'
   node {
-    sh "mvn clean package -Parq-jbossas-managed'"
+    sh "mvn clean package -Parq-jbossas-managed"
   }
 
 
