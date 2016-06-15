@@ -3,8 +3,9 @@ echo 'hello from Pipeline'
 stage 'Begin'
 
 stage 'GitPull'
-  git url: 'https://github.com/jimleitch01/ose3-ticket-monster.git'
-
+  node {
+    git url: 'https://github.com/jimleitch01/ose3-ticket-monster.git'
+  }
 
 stage 'Coverage'
   // node {
