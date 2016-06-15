@@ -18,12 +18,18 @@ node {
   sh "mvn verify"
 }
 
+stage 'Coverage'
+  node {
+    sh "mvn clean package -Parq-jbossas-managed'"
+  }
+
+
+
 
 stage 'Coverage'
   node {
     sh "mvn sonar:sonar -Dsonar.jdbc.url='jdbc:h2:tcp://sonarq.test-rig.net/sonar'"
   }
-
 
 stage 'Build'
 node {
