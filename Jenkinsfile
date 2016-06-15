@@ -15,7 +15,7 @@ node {
 
 stage 'Coverage'
   node {
-    sh "clean verify sonar:sonar"
+    sh "mvn clean verify sonar:sonar"
   }
 
 
