@@ -9,7 +9,7 @@ stage 'Coverage'
 
 stage 'Clean'
 node {
-  sh "mvn clean"
+  sh "pwd"
 }
 
 stage 'Build'
