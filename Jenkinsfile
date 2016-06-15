@@ -3,7 +3,7 @@ echo 'hello from Pipeline'
 stage 'Begin'
 
 
-stage 'Maven Clean'
+stage 'Touch'
  node {
    sh "touch /tmp/doit.txt"
  }
