@@ -7,15 +7,17 @@ stage 'GitPull'
     git url: 'https://github.com/jimleitch01/ose3-ticket-monster.git'
   }
 
-stage 'Coverage'
-  // node {
-  //   sh "/usr/local/maven/bin/mvn clean"
-  // }
 
 stage 'Clean'
 node {
   sh "mvn clean"
 }
+
+stage 'Coverage'
+  node {
+    sh "clean verify sonar:sonar"
+  }
+
 
 stage 'Build'
 node {
