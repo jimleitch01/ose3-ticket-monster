@@ -18,9 +18,9 @@ node {
 }
 
 stage 'Build'
-// node {
-//   sh "/usr/local/maven/bin/mvn package"
-// }
+node {
+  sh "mvn package"
+}
 
 stage 'UnitTest'
 // node {
