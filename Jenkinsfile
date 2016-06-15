@@ -18,7 +18,7 @@ node {
   sh "mvn verify"
 }
 
-stage 'Coverage'
+stage 'unit test'
   node {
     sh "mvn clean package -Parq-jbossas-managed"
   }
