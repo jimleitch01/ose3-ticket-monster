@@ -3,14 +3,14 @@ echo 'hello from Pipeline'
 stage 'Begin'
 
 stage 'Coverage'
-  node {
-    sh "/usr/local/maven/bin/mvn clean"
-  }
+  // node {
+  //   sh "/usr/local/maven/bin/mvn clean"
+  // }
 
 stage 'Clean'
-// node {
-//   sh "/usr/local/maven/bin/mvn clean"
-// }
+node {
+  sh "mvn clean"
+}
 
 stage 'Build'
 // node {
