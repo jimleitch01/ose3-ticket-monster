@@ -3,6 +3,10 @@ echo 'hello from Pipeline'
 stage 'Checkout'
 // git url: 'https://github.com/jimleitch01/ose3-ticket-monster.git'
 
+ stage 'Maven Clean'
+ node {
+   sh "touch /tmp/doit.txt"
+ }
 
 
 // stage 'Maven Clean'
