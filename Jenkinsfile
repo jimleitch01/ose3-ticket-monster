@@ -13,9 +13,15 @@ node {
   sh "mvn clean"
 }
 
+stage 'Verify'
+node {
+  sh "mvn verify"
+}
+
+
 stage 'Coverage'
   node {
-    sh "mvn clean verify sonar:sonar"
+    sh "mvn sonar:sonar -Dsonar.jdbc.url='jdbc:h2:tcp://sonarq.test-rig.net/sonar'"
   }
 
 
@@ -34,6 +40,13 @@ stage 'UploadArtifacts'
 //   sh "/usr/local/maven/bin/mvn package"
 // }
 
+stage 'Provision'
+// node {
+//   sh "#rm /usr/local/wildfly/standalone/deployments/ticket-monster.war"
+//   sh "cp target/ticket-monster.war /usr/local/wildfly/standalone/deployments/"
+// }
+
+
 stage 'Deploy'
 // node {
 //   sh "#rm /usr/local/wildfly/standalone/deployments/ticket-monster.war"
@@ -46,6 +59,11 @@ stage 'InterfaceTest'
 //   sh "/tmp/runselenium"
 // }
 
+stage 'Destroy'
+// node {
+//   sh "#rm /usr/local/wildfly/standalone/deployments/ticket-monster.war"
+//   sh "cp target/ticket-monster.war /usr/local/wildfly/standalone/deployments/"
+// }
 
 
 stage 'End'
