@@ -4,7 +4,7 @@ stage 'Begin'
 
 stage 'GitPull'
   node {
-    // git url: 'https://github.com/jimleitch01/ose3-ticket-monster.git'
+    git url: 'https://github.com/jimleitch01/ose3-ticket-monster.git'
   }
 
 stage 'Clean'
@@ -24,7 +24,7 @@ stage 'UnitTests'
 
 stage 'Build'
   node {
-    sh "mvn package"
+    // sh "mvn package"
   }
 
 stage 'UploadArtifacts'
@@ -44,6 +44,10 @@ node {
 
 stage 'Deploy'
 node {
+  sh "terraform remote config -backend=consul  -backend-config='path=tf-jenkinsnight' -backend-config='address=consulp.test-rig.net:8500'"
+
+
+
   // sh "#rm /usr/local/wildfly/standalone/deployments/ticket-monster.war"
   // sh "cp target/ticket-monster.war /usr/local/wildfly/standalone/deployments/"
 // sshagent (credentialsId: '1dc36693-4921-4b33-8e1a-3ab922fb4784') {
