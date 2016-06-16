@@ -1,10 +1,15 @@
+resource "openstack_networking_floatingip_v2" "jboss_fp" {
+  region = ""
+  pool = "${var.my-ip-pool}"
+}
+
 
 resource "openstack_compute_instance_v2" "jboss" {
-count = "${var.num-jboss-servers}"
-name = "${format("${var.cloud-name}-jboss%02d", count.index )}"
-image_name = "${var.default-image-type}"
-flavor_name = "${var.default_flavor}"
-security_groups = ["allow_everything-${var.cloud-name}-sec"]
+count = "1"
+name = "demo-jboss"
+image_name = "CentOS7"
+flavor_name = "m1.medium"
+security_groups = ["allow_everything-demo"]
 /*security_groups = ["allow_everything-infra-sec"]*/
 key_pair = "jim-key"
 floating_ip = "${openstack_networking_floatingip_v2.jboss_fp.address}"

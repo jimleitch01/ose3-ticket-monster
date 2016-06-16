@@ -44,9 +44,11 @@ node {
 
 stage 'Deploy'
 node {
-  sh "/usr/local/terraform/terraform remote config -backend=consul  -backend-config='path=tf-jenkinsnight' -backend-config='address=consulp.test-rig.net:8500'"
+  // sh "/usr/local/terraform/terraform remote config -backend=consul  -backend-config='path=tf-jenkinsnight' -backend-config='address=consulp.test-rig.net:8500'"
+  // sh "cd tf ; /usr/local/terraform/terraform plan"
+  // sh "cd tf ; /usr/local/terraform/terraform apply"
 
-
+  ssh "ssh centos@jboss.test-rig.net touch /tmp/jimwashere.txt"
 
   // sh "#rm /usr/local/wildfly/standalone/deployments/ticket-monster.war"
   // sh "cp target/ticket-monster.war /usr/local/wildfly/standalone/deployments/"
