@@ -24,7 +24,7 @@ stage 'Coverage'
 
 stage 'UnitTests'
   node {
-    sh "UNIT TESTS HERE, HONEST"
+    sh "echo UNIT TESTS HERE HONEST"
   }
 
 stage 'Build'
