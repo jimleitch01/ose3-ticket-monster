@@ -49,7 +49,7 @@ node {
   // sh "cd tf ; /usr/local/terraform/terraform apply"
 
 // sshagent (credentialsId: '7700b5d0-36fb-4ee9-81d6-2ebb1539afc5') {
-  sh "ssh -i ~/.ssh/jim-jenkins-key-o StrictHostKeyChecking=no centos@jboss.test-rig.net touch /tmp/jimwashere.txt"
+  sh "ssh -i ~/.ssh/jim-jenkins-key -o StrictHostKeyChecking=no centos@jboss.test-rig.net touch /tmp/jimwashere.txt"
 // }
   // sh "#rm /usr/local/wildfly/standalone/deployments/ticket-monster.war"
   // sh "cp target/ticket-monster.war /usr/local/wildfly/standalone/deployments/"
