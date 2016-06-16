@@ -5,7 +5,7 @@
   "steps": [
     {
       "type": "get",
-      "url": "http://10.10.11.119:8080/ticket-monster/"
+      "url": "http://jboss.test-rig.net:8080/ticket-monster/"
     },
     {
       "type": "clickElement",

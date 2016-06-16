@@ -24,7 +24,7 @@ stage 'UnitTests'
 
 stage 'Build'
   node {
-    // sh "mvn package"
+    sh "mvn package"
   }
 
 stage 'UploadArtifacts'
@@ -33,7 +33,7 @@ node {
 }
 
 
-//wget http://nexus.test-rig.net:8081/service/local/repositories/releases/content/net/test-rig/project/1.0.0/project-1.0.0.war
+//wget http://172.24.4.8:8081/service/local/repositories/releases/content/net/test-rig/ticketmonster/0.0.1/ticketmonster-0.0.1.war
 
 // stage 'Provision'
 // node {
