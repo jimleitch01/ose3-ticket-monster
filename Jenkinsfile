@@ -44,7 +44,7 @@ node {
 
 stage 'Deploy'
 node {
-  sh "/usr/local/terrafomr/terraform remote config -backend=consul  -backend-config='path=tf-jenkinsnight' -backend-config='address=consulp.test-rig.net:8500'"
+  sh "/usr/local/terraform/terraform remote config -backend=consul  -backend-config='path=tf-jenkinsnight' -backend-config='address=consulp.test-rig.net:8500'"
 
 
 
