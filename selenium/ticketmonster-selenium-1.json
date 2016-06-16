@@ -122,14 +122,6 @@
     {
       "type": "verifyTextPresent",
       "text": "Venue: Sydney Opera House"
-    },
-    {
-      "type": "verifyTextPresent",
-      "text": "Date: Wed 23 September 2015 at 21:30"
-    },
-    {
-      "type": "verifyTextPresent",
-      "text": "Created on: Thu 12 May 2016 at 06:42"
     }
   ],
   "data": {
