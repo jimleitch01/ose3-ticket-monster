@@ -63,7 +63,7 @@ node {
 sauce('014e494b-7043-4a66-ac8b-646c315b2b0d') {
     // some block
 }
-// }
+}
 
 // }
 
