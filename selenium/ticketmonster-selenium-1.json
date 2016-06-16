@@ -113,7 +113,7 @@
     },
     {
       "type": "verifyTextPresent",
-      "text": "Email: jim@jim.com"
+      "text": "Email: james@james.com"
     },
     {
       "type": "verifyTextPresent",
