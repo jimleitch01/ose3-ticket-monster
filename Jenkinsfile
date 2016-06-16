@@ -34,7 +34,7 @@ stage 'Build'
 
 stage 'UploadArtifacts'
 node {
-  sh "mvn deploy:deploy-file -DgroupId=net.test-rig -DartifactId=project -Dversion=1.0.0 -DgeneratePom=false -Dpackaging=jar -DrepositoryId=nexus -Durl=http://nexus.test-rig.net:8081/nexus/content/repositories/releases -DpomFile=pom.xml -Dfile=target/project-1.0.0.jar"
+  sh "mvn deploy:deploy-file -DgroupId=net.test-rig -DartifactId=project -Dversion=1.0.0 -DgeneratePom=false -Dpackaging=war -DrepositoryId=nexus -Durl=http://nexus.test-rig.net:8081/nexus/content/repositories/releases -DpomFile=pom.xml -Dfile=target/ticket-monster.war"
 }
 
 stage 'Provision'
