@@ -55,7 +55,7 @@ node {
 
 
 
-http://172.24.4.8:8081/service/local/repositories/releases/content/net/test-rig/ticketmonster/0.0.1/ticketmonster-0.0.1.war
+// http://172.24.4.8:8081/service/local/repositories/releases/content/net/test-rig/ticketmonster/0.0.1/ticketmonster-0.0.1.war
 
 // }
   // sh "#rm /usr/local/wildfly/standalone/deployments/ticket-monster.war"
