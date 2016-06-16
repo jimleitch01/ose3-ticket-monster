@@ -6,7 +6,7 @@ stage 'GitPull'
   node {
     // git url: 'https://github.com/jimleitch01/ose3-ticket-monster.git'
   }
-
+ 
 stage 'Clean'
   node {
     sh "mvn clean"
