@@ -7,44 +7,35 @@ stage 'GitPull'
     git url: 'https://github.com/jimleitch01/ose3-ticket-monster.git'
   }
 
-
 stage 'Clean'
-node {
-  sh "mvn clean"
-}
-
-stage 'Verify'
-node {
-  sh "mvn verify"
-}
-
-stage 'unit test'
   node {
-    sh "mvn clean package -Parq-jbossas-managed"
+    sh "mvn clean"
   }
 
-
-
+stage 'Verify'
+  node {
+    sh "mvn verify"
+  }
 
 stage 'Coverage'
   node {
     sh "mvn sonar:sonar -Dsonar.jdbc.url='jdbc:h2:tcp://sonarq.test-rig.net/sonar'"
   }
 
-stage 'Build'
-node {
-  sh "mvn package"
-}
+stage 'UnitTests'
+  node {
+    sh "UNIT TESTS HERE, HONEST"
+  }
 
-stage 'UnitTest'
-// node {
-//   sh "/usr/local/maven/bin/mvn package"
-// }
+stage 'Build'
+  node {
+    sh "mvn package"
+  }
 
 stage 'UploadArtifacts'
-// node {
-//   sh "/usr/local/maven/bin/mvn package"
-// }
+node {
+  sh "mvn deploy:deploy-file -DgroupId=net.test-rig -DartifactId=project -Dversion=1.0.0 -DgeneratePom=false -Dpackaging=jar -DrepositoryId=nexus -Durl=http://nexus.test-rig.net:8081/nexus/content/repositories/releases -DpomFile=pom.xml -Dfile=target/project-1.0.0.jar"
+}
 
 stage 'Provision'
 // node {
