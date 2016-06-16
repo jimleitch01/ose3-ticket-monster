@@ -48,7 +48,7 @@ node {
   // sh "cd tf ; /usr/local/terraform/terraform plan"
   // sh "cd tf ; /usr/local/terraform/terraform apply"
 
-  sh "ssh centos@jboss.test-rig.net touch /tmp/jimwashere.txt"
+  sh "ssh -o StrictHostKeyChecking=no centos@jboss.test-rig.net touch /tmp/jimwashere.txt"
 
   // sh "#rm /usr/local/wildfly/standalone/deployments/ticket-monster.war"
   // sh "cp target/ticket-monster.war /usr/local/wildfly/standalone/deployments/"
