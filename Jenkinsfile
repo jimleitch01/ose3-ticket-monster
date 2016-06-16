@@ -13,9 +13,9 @@ stage 'Clean'
   }
 
 stage 'Coverage'
-  // node {
-  //   sh "mvn sonar:sonar -Dsonar.jdbc.url='jdbc:h2:tcp://sonarq.test-rig.net/sonar'"
-  // }
+  node {
+    sh "mvn sonar:sonar -Dsonar.jdbc.url='jdbc:h2:tcp://sonarq.test-rig.net/sonar'"
+  }
 
 stage 'UnitTests'
   node {
@@ -23,9 +23,9 @@ stage 'UnitTests'
   }
 
 stage 'Build'
-  // node {
-  //   sh "mvn package"
-  // }
+  node {
+    sh "mvn package"
+  }
 
 stage 'UploadArtifacts'
 node {
