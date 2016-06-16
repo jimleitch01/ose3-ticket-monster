@@ -52,11 +52,12 @@ node {
   // sh "#rm /usr/local/wildfly/standalone/deployments/ticket-monster.war"
   // sh "cp target/ticket-monster.war /usr/local/wildfly/standalone/deployments/"
   sshagent (credentials: ['1dc36693-4921-4b33-8e1a-3ab922fb4784']) {
-           sh 'scp target/ticket-monster.war centos@172.24.4.12:/usr/local/wildfly/standalone/deployments/'
+           sh 'ssh centos@172.24.4.12 wget http://nexus.test-rig.net:8081/service/local/repositories/releases/content/net/test-rig/ticketmonster/0.0.1/ticketmonster-0.0.1.war'
+           sh 'ssh centos@172.24.4.12 cp ticketmonster-0.0.1.war /usr/local/wildfly/standalone/deployments/'
        }
 }
 
-stage 'InterfaceTest'
+stage 'UItest'
 // node {
 
 sauce('014e494b-7043-4a66-ac8b-646c315b2b0d') {
@@ -64,10 +65,6 @@ sauce('014e494b-7043-4a66-ac8b-646c315b2b0d') {
 }
 // }
 
-stage 'Destroy'
-// node {
-//   sh "#rm /usr/local/wildfly/standalone/deployments/ticket-monster.war"
-//   sh "cp target/ticket-monster.war /usr/local/wildfly/standalone/deployments/"
 // }
 
 
