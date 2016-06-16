@@ -47,8 +47,8 @@ node {
   // sh "#rm /usr/local/wildfly/standalone/deployments/ticket-monster.war"
   // sh "cp target/ticket-monster.war /usr/local/wildfly/standalone/deployments/"
 sshagent (credentialsId: '1dc36693-4921-4b33-8e1a-3ab922fb4784') {
-     sh 'ssh -o StrictHostKeyChecking=no centos@172.24.4.12 wget http://nexus.test-rig.net:8081/service/local/repositories/releases/content/net/test-rig/ticketmonster/0.0.1/ticketmonster-0.0.1.war'
-     sh 'ssh -o StrictHostKeyChecking=no centos@172.24.4.12 cp ticketmonster-0.0.1.war /usr/local/wildfly/standalone/deployments/'
+    //  sh 'ssh -o StrictHostKeyChecking=no centos@172.24.4.12 wget http://nexus.test-rig.net:8081/service/local/repositories/releases/content/net/test-rig/ticketmonster/0.0.1/ticketmonster-0.0.1.war'
+    //  sh 'ssh -o StrictHostKeyChecking=no centos@172.24.4.12 cp ticketmonster-0.0.1.war /usr/local/wildfly/standalone/deployments/'
    }
 }
 
