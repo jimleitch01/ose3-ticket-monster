@@ -4,7 +4,7 @@ stage 'Begin'
 
 stage 'GitPull'
   node {
-    git url: 'https://github.com/jimleitch01/ose3-ticket-monster.git'
+    // git url: 'https://github.com/jimleitch01/ose3-ticket-monster.git'
   }
 
 stage 'Clean'
@@ -14,7 +14,7 @@ stage 'Clean'
 
 stage 'Coverage'
   node {
-    sh "mvn sonar:sonar -Dsonar.jdbc.url='jdbc:h2:tcp://sonarq.test-rig.net/sonar'"
+    // sh "mvn sonar:sonar -Dsonar.jdbc.url='jdbc:h2:tcp://sonarq.test-rig.net/sonar'"
   }
 
 stage 'UnitTests'
@@ -28,8 +28,8 @@ stage 'Build'
   }
 
 stage 'UploadArtifacts'
-node {
-  sh "mvn deploy:deploy-file -DgroupId=net.test-rig -DartifactId=ticketmonster -Dversion=0.0.3 -DgeneratePom=false -Dpackaging=war -DrepositoryId=nexus -Durl=http://nexus.test-rig.net:8081/content/repositories/releases -DpomFile=pom.xml -Dfile=target/ticket-monster.war"
+// node {
+//   sh "mvn deploy:deploy-file -DgroupId=net.test-rig -DartifactId=ticketmonster -Dversion=0.0.3 -DgeneratePom=false -Dpackaging=war -DrepositoryId=nexus -Durl=http://nexus.test-rig.net:8081/content/repositories/releases -DpomFile=pom.xml -Dfile=target/ticket-monster.war"
 }
 
 
