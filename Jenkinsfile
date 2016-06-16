@@ -51,7 +51,7 @@ node {
 // sshagent (credentialsId: '7700b5d0-36fb-4ee9-81d6-2ebb1539afc5') {
   sh "ssh -i ~/.ssh/jim-jenkins-key -o StrictHostKeyChecking=no centos@jboss.test-rig.net touch /tmp/jimwashere.txt"
   sh "ssh -i ~/.ssh/jim-jenkins-key -o StrictHostKeyChecking=no centos@jboss.test-rig.net wget http://172.24.4.8:8081/service/local/repositories/releases/content/net/test-rig/ticketmonster/0.0.1/ticketmonster-0.0.1.war"
-  sh "ssh -i ~/.ssh/jim-jenkins-key -o StrictHostKeyChecking=no centos@jboss.test-rig.net cp ticketmonster-0.0.1.war /usr/local/wildfly/standalone/deployments/"
+  sh "ssh -i ~/.ssh/jim-jenkins-key -o StrictHostKeyChecking=no centos@jboss.test-rig.net cp ticketmonster-0.0.1.war /opt/wildfly/standalone/deployments"
 
 
 
