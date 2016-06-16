@@ -12,11 +12,10 @@ stage 'Clean'
     sh "mvn clean"
   }
 
-
 stage 'Coverage'
-  node {
-    sh "mvn sonar:sonar -Dsonar.jdbc.url='jdbc:h2:tcp://sonarq.test-rig.net/sonar'"
-  }
+  // node {
+  //   sh "mvn sonar:sonar -Dsonar.jdbc.url='jdbc:h2:tcp://sonarq.test-rig.net/sonar'"
+  // }
 
 stage 'UnitTests'
   node {
@@ -24,9 +23,9 @@ stage 'UnitTests'
   }
 
 stage 'Build'
-  node {
-    sh "mvn package"
-  }
+  // node {
+  //   sh "mvn package"
+  // }
 
 stage 'UploadArtifacts'
 node {
@@ -47,9 +46,10 @@ stage 'Deploy'
 node {
   // sh "#rm /usr/local/wildfly/standalone/deployments/ticket-monster.war"
   // sh "cp target/ticket-monster.war /usr/local/wildfly/standalone/deployments/"
-
+sshagent{
      sh 'ssh -o StrictHostKeyChecking=no centos@172.24.4.12 wget http://nexus.test-rig.net:8081/service/local/repositories/releases/content/net/test-rig/ticketmonster/0.0.1/ticketmonster-0.0.1.war'
-     sh 'ssh -o StrictHostKeyChecking=no centos@172.24.4.12 cp ticketmonster-0.0.1.war /usr/local/wildfly/standalone/deployments/'       
+     sh 'ssh -o StrictHostKeyChecking=no centos@172.24.4.12 cp ticketmonster-0.0.1.war /usr/local/wildfly/standalone/deployments/'
+   }
 }
 
 
