@@ -74,7 +74,14 @@ node {
 stage 'UItest'
 node {
   sauce('014e494b-7043-4a66-ac8b-646c315b2b0d') {
+
+    sauceconnect(options: '', useGeneratedTunnelIdentifier: false, verboseLogging: false) {
+        // some block
+
+
+
       sh "cd selenium ; se-interpreter ticketmonster-selenium-1.json --driver-host=ondemand.saucelabs.com --driver-port=80"
+    }
   }
 }
 
